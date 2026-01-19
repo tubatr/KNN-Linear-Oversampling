@@ -74,12 +74,14 @@ def custom_oversample(X, y, k=5):
     X_final = np.vstack(X_resampled)
     y_final = np.hstack(y_resampled)
     return X_final, y_final
+
 def plot_dashboard(X_old, y_old, probs_old, X_new, y_new, probs_new, name, n_classes, y_test_old, y_test_new):
     # Generates 2x2 dashboard:
     # Top-left: Before scatter
     # Top-right: After scatter
     # Bottom-left: ROC before
     # Bottom-right: ROC after
+
 clf = LogisticRegression(multi_class='auto', solver='lbfgs', max_iter=1000)
 clf.fit(X_train_res, y_train_res)
 preds = clf.predict(X_test)
